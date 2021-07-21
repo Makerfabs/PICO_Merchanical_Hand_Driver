@@ -1,0 +1,49 @@
+# #圆盘泡茶
+# 
+# #扭手抬起，准备挂茶包
+# ABS A-40 B-50 C60 D60 F-10 E90
+# 
+# #报警，等待按键
+# BUZZ
+# BUTT
+# 
+# #茶包落下
+# ABS A0
+# WAIT
+# 
+# REL C10
+# REL C10
+# WAIT
+# 
+# REL D10
+# REL D10
+# REL D10
+# WAIT
+# 
+# REL B5
+# REL B5
+# REL B5
+# REL B5
+# 
+# #等待几分钟
+# SLEEP 10
+
+
+#[0, -50, 70, 80, 90, -10]
+ABS A0 B-30 C90 D90 E90 F-10
+
+BUTT
+SLEEP 10
+
+#茶包抬起
+REL B-10
+REL B-10
+REL D-10
+REL C-10
+
+#报警
+BUZZ
+
+END
+
+

@@ -80,7 +80,7 @@ There are 2 identical PIO blocks in RP2040. Each PIO block has dedicated connect
 
 
 
-![1](E:/资料储备/Pico相关/md_pic/image-9.png)
+![1](md_pic/image-9.png)
 
 
 
@@ -109,7 +109,7 @@ The four state machines execute from a shared instruction memory. System softwar
 
 From this point on, state machines are generally autonomous, and system software interacts through DMA, interrupts and control registers, as with other peripherals on RP2040. For more complex interfaces, PIO provides a small but flexible set of primitives which allow system software to be more hands-on with state machine control flow.
 
-![2](E:/资料储备/Pico相关/md_pic/image-10.png)
+![2](md_pic/image-10.png)
 
 
 

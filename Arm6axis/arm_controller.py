@@ -1,7 +1,7 @@
 from arm_6axis import Arm_6
 import time
 
-RUNFILE = "arm_code2.txt"
+RUNFILE = "arm_code7.txt"
 DEBUG = 0
 
 # PIN_LIST = [16, 17, 18, 19, 20, 21]

@@ -8,9 +8,9 @@ DEBUG = 0
 # DIR_LIST = [0, 0, 0, 1, 0, 0]
 # ANGLE_LIST = [-2, -25, 75, 75, 0, 40]
 
-PIN_LIST    = [16, 17, 18, 19, 20, 21]
-DIR_LIST    = [0, 1, 1, 0, 0, 1]
-ANGLE_LIST  = [-2, -40, 75, 75, 0, -10]
+PIN_LIST = [16, 17, 18, 19, 20, 21]
+DIR_LIST = [0, 1, 1, 0, 0, 1]
+ANGLE_LIST = [-2, -40, 75, 75, 0, -10]
 
 
 DELAY_TIME = 0.5
@@ -68,7 +68,7 @@ class Arm_controller:
         elif TEXT.find("BUZZ") == 0:
             alarm()
             return 1
-        
+
         elif TEXT.find("BUTT") == 0:
             input_button()
             return 1
@@ -164,6 +164,20 @@ def control_by_serial_save():
 
     file.close()
 
+
+def control_for_factory_test():
+
+    dir_list_factory = [0, 0, 0, 0, 0, 0]
+    angle_list_factory = [0, 0, 0, 0, 0, 0]
+    ct = Arm_controller(PIN_LIST, dir_list_factory)
+    ct.init_arm_angle(angle_list_factory)
+    while 1:
+        ct.explain_line("ABS A45 B45 C45 D45 E45 F45")
+        ct.explain_line("WAIT")
+        ct.explain_line("ABS A-45 B-45 C-45 D-45 E-45 F-45")
+        ct.explain_line("WAIT")
+
+
 def alarm():
     buzzer = machine.Pin(15, machine.Pin.OUT)
     for i in range(500):
@@ -171,6 +185,7 @@ def alarm():
         time.sleep(0.001)
         buzzer.value(0)
         time.sleep(0.001)
+
 
 def input_button():
     button = machine.Pin(14, machine.Pin.IN, machine.Pin.PULL_UP)
@@ -181,13 +196,17 @@ def input_button():
             if button.value() == 0:
                 alarm()
                 break
-        time.sleep(0.5)    
+        time.sleep(0.5)
+
+
 def test():
 
-    while 1:
-        control_by_file()
-        break
+    # while 1:
+    #     control_by_file()
+    #     break
     # control_by_serial()
     # control_by_serial_save()
+    control_for_factory_test()
+
 
 test()

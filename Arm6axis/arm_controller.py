@@ -1,5 +1,6 @@
 from arm_6axis import Arm_6
 import time
+import machine
 
 RUNFILE = "arm_code7.txt"
 DEBUG = 0
@@ -171,11 +172,14 @@ def control_for_factory_test():
     angle_list_factory = [0, 0, 0, 0, 0, 0]
     ct = Arm_controller(PIN_LIST, dir_list_factory)
     ct.init_arm_angle(angle_list_factory)
+    ct.explain_line("BUZZ")
     while 1:
+        ct.explain_line("BUTT")
+        ct.explain_line("BUZZ")
         ct.explain_line("ABS A45 B45 C45 D45 E45 F45")
         ct.explain_line("WAIT")
         ct.explain_line("ABS A-45 B-45 C-45 D-45 E-45 F-45")
-        ct.explain_line("WAIT")
+        # ct.explain_line("WAIT")
 
 
 def alarm():

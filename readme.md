@@ -18,7 +18,7 @@ Note:
 
 [Makerfabs home page](https://www.makerfabs.com/)
 
-[Makerfabs Wiki](https://makerfabs.com/wiki/index.php?title=Main_Page)
+[Makerfabs Wiki](https://wiki.makerfabs.com/)
 
 # PICO Merchanical Hand Driver
 
@@ -26,7 +26,7 @@ Note:
 
 Pico mechanical hand driver is a platform based on raspberry pi pico, which is designed for driving and controlling servos. The board comes with an 8-bit level translator and 8 channels GPIO headers that can connect the servo directly. Now you can build your new project about servo by trying out the Raspberry PI Pico.
 
-### Wiki Link:[PICO_Servo_Driver](https://www.makerfabs.com/wiki/index.php?title=PICO_Servo_Driver)
+### Wiki Link:[PICO_Servo_Driver](https://wiki.makerfabs.com/PICO_Servo_Driver.html)
 
 
 
